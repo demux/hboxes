@@ -1,0 +1,124 @@
+.clearfix {
+    zoom: 1;
+    &:before, &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+.x {
+    z-index: 9999;
+    background-color: blue;
+    height: 1px;
+    width: 100%;
+    position:fixed;
+    top: 50%;
+    left: 0;
+}
+
+.y {
+    z-index: 9999;
+    background-color: blue;
+    width: 1px;
+    height: 100%;
+    position:fixed;
+    top: 0;
+    left: 50%;
+}
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+#menu {
+    z-index: 9999;
+    width: 60px;
+    height: 100%;
+    position:fixed;
+    top:0;
+    left:0;
+    background-color: grey;
+    border-right: 1px solid black;
+    
+    ul {
+        display:block;
+        list-style: none;
+        margin: 0 auto;
+        
+        li {
+            display:block;
+            float:left;
+            margin: 10px;
+            background-color: green;
+            cursor: pointer;
+            color: white;
+            padding: 10px
+        }
+    }
+}
+
+@steps: 6;
+@width: 300px;
+@height: 300px;
+@margin: -40px;
+
+@red: #bc2123;
+@red_shadow: #8c2324;
+@orange: #eb4f13;
+@orange_shadow: #cb4410;
+
+#steps-wrapper {
+    .clearfix;
+    background-color:#b4d455;
+    margin: 0 auto;
+    padding-left: -@margin;
+    width: (@width + @margin);
+    
+    #steps {
+        .clearfix;
+        width: (@steps * (@width + @margin));
+        
+        counter-reset: step;
+        
+        .step {
+            position: relative;
+            float:left;
+            background-color: @orange;
+            width: @width;
+            height: @height;
+            margin-left: @margin;
+            
+            &.active {
+                box-shadow: 0 0 10px blue;
+            }
+            
+            .shadow {
+                @b: (@margin * -1 / 2);
+                position: absolute;
+                top: @height;
+                left: 0;
+                width:0;
+                height:0;
+                border: @b solid transparent;
+                border-right-color: @red_shadow;
+                border-top-color: @red_shadow;
+                border-top-width:0px;
+                border-bottom-width:0px;
+            }
+            
+            &:nth-child(even) {
+                background-color: @red;
+                
+                .shadow {
+                    border-right-color: @orange_shadow;
+                    border-top-color: @orange_shadow;
+                }
+            }
+        }
+    }
+}
