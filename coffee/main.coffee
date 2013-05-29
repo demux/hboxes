@@ -1,6 +1,7 @@
 _width = 780
 _height = 370
 _margin = 40
+_min_margin = 280
 _time = 0.7
 
 $steps = null
@@ -92,6 +93,8 @@ $ ->
         $steps.each (index) ->
             steps_pos.push($(this).offset().left)
         steps_pos.reverse()
+
+        $(window).scroll()
     .resize()
 
     # Position steps:
@@ -119,7 +122,14 @@ $ ->
         return false
     
     get_margin_top = (i) ->
-        -(i * _margin) + (($(window).height() / 2) - (_height / 2))
+        wh = $(window).height()
+        im = -(i * _margin)
+        margin = im + ((wh / 2) - (_height / 2))
+
+        if margin < _min_margin + im
+            margin = _min_margin + im
+
+        return margin
     
     router = new Router()
 
