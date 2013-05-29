@@ -108,442 +108,430 @@ body {
         width: (@steps * (@width + @margin));
         
         counter-reset: step;
+    }
+}
+
+.step {
+    position: relative;
+    float:left;
+    background-color: @orange;
+    width: @width;
+    height: @height;
+    margin-left: @margin;
+    box-shadow: 0 0 10px @red_shadow;
+    
+    .shadow {
+        @b: (@margin * -1 / 2);
+        position: absolute;
+        top: @height;
+        left: 0;
+        width:0;
+        height:0;
+        border: @b solid transparent;
+        border-right-color: @red_shadow;
+        border-top-color: @red_shadow;
+        border-top-width:0px;
+        border-bottom-width:0px;
+    }
+
+    &:nth-child(even) {
+        background-color: @red;
+        box-shadow: 0 0 10px @orange_shadow;
         
-        .step {
-            position: relative;
+        .shadow {
+            border-right-color: @orange_shadow;
+            border-top-color: @orange_shadow;
+        }
+    }
+
+      ////////////////////////////
+     /// Step content styles: ///
+    ////////////////////////////
+
+    .indent {
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 24px;
+        line-height: 0.9em;
+    }
+
+    .hbox {
+        .clearfix;
+
+        margin-top: 10px;
+
+        h1, h4 {
             float:left;
-            background-color: @orange;
-            width: @width;
-            height: @height;
-            margin-left: @margin;
-            box-shadow: 0 0 10px @red_shadow;
+            margin:0;
+            padding: 0;
+        }
+
+        h1 {
+            color: white;
+            font-size: 54px;
+            padding-left: 8px;
+            height: 63px;
+            line-height: 63px;
+        }
+
+        h4 {
+            height: 53px;
+            padding: 10px 0 0 10px;
+            font-size: 22px;
+            line-height: 1em;
+        }
+    }
+    
+    a.lesa-meira {
+        display: block;
+        margin-top: 10px;
+        font-size: 24px;
+        line-height: 125%;
+        color: white;
+        margin-left: 400px;
+    }
+
+    .meira {
+        display: none;
+    }
+    
+    ul {
+        list-style: none;
+        margin-top: 10px;
+
+        li {
+            font-family: 'pluto_sanscond_medium', sans-serif;
+            font-size: 16px;
+            line-height: 1.4em;
+            color: white;
+            display: block;
+
+            &:before {
+                content: '*';
+                float:left;
+                color: black;
+                padding-right: 5px;
+                padding-top: 4px;
+                margin-bottom: -4px;
+                font-size: 18px;
+            }
+        }
+    }
+    
+    .carrot {
+        font-family: 'pluto_sanscond_medium', sans-serif;
+        font-size: 13px;
+        line-height: 1em;
+        background: url('../images/carrot.png') no-repeat left top;
+        position: absolute;
+        top: 280px;
+        left: -13px;
+        width: 488px;
+        height: 53px;
+        padding: 7px 0 0 170px;
+    }
+
+    .bubble {
+        position: absolute;
+        line-height: 1.1em;
+        text-align: center;
+        opacity: 0;
+        transition: opacity 1s;
+    }
+
+    .man {
+        font-size: 20px;
+    }
+
+    .bully {
+        font-size: 23px;
+    }
+
+    .bullyWall {
+        opacity: 0;
+        transition: opacity 1s;
+    }
+
+    &.active {
+        .bubble, .bullyWall {
+            opacity: 1;
+        }
+    }
+      ////////////////////////////////
+     /// End Step content styles: ///
+    ////////////////////////////////
+
+    /*    STEP ONE */
+    &.step1 {
+        .hbox {
+            background: url('../images/shapeH1_1.png') no-repeat left top;
+            width: 366px;
+            height: 63px;
+        }
+
+        .character {
+            position: absolute;
+            top: -117px;
+            right: 96px;
+        }
+
+        .man {
+            background: url('../images/bubbleMan_1.png') no-repeat left top;
+            width: 174px;
+            height: 104px;
+            top: -200px;
+            right: 307px;
+            padding-top: 12px;
+        }
+
+        .bully {
+            background: url('../images/bubbleBully_1.png') no-repeat left top;
+            width: 204px;
+            height: 156px;
+            top: -254px;
+            right: 77px;
+            padding-top: 7px;
+        }
+    }
+
+    /*    STEP TWO */
+    &.step2 {
+        .hbox {
+            background: url('../images/shapeH1_2.png') no-repeat left top;
+            width: 378px;
+            height: 64px;
+        }
+
+        .character {
+            position: absolute;
+            top: -144px;
+            right: 107px;
+        }
+
+        .man {
+            background: url('../images/bubbleMan_2.png') no-repeat left top;
+            background-position-x: 16px;
+            width: 215px;
+            height: 74px;
+            top: -181px;
+            right: 287px;
+            padding-top: 15px;
+        }
+
+        span.n2 {
+            margin-left: 124px;
+        }
+
+        .bully {
+            background: url('../images/bubbleBully_2.png') no-repeat left top;
+            background-position-x: 28px;
+            width: 364px;
+            height: 159px;
+            top: -286px;
+            right: 100px;
             
-            .shadow {
-                @b: (@margin * -1 / 2);
-                position: absolute;
-                top: @height;
-                left: 0;
-                width:0;
-                height:0;
-                border: @b solid transparent;
-                border-right-color: @red_shadow;
-                border-top-color: @red_shadow;
-                border-top-width:0px;
-                border-bottom-width:0px;
-            }
+        }
+    }
 
-            &:nth-child(even) {
-                background-color: @red;
-                box-shadow: 0 0 10px @orange_shadow;
-                
-                .shadow {
-                    border-right-color: @orange_shadow;
-                    border-top-color: @orange_shadow;
-                }
-            }
-
-              ////////////////////////////
-             /// Step content styles: ///
-            ////////////////////////////
-
-            .indent {
-                padding: 20px;
-            }
-
-            h2 {
-                font-size: 24px;
-                line-height: 0.9em;
-            }
-
-            .hbox {
-                .clearfix;
-
-                margin-top: 10px;
-
-                h1, h4 {
-                    float:left;
-                    margin:0;
-                    padding: 0;
-                }
-
-                h1 {
-                    color: white;
-                    font-size: 54px;
-                    padding-left: 8px;
-                    height: 63px;
-                    line-height: 63px;
-                }
-
-                h4 {
-                    height: 53px;
-                    padding: 10px 0 0 10px;
-                    font-size: 22px;
-                    line-height: 1em;
-                }
-            }
-            
-            a.lesa-meira {
-                display: block;
-                margin-top: 10px;
-                font-size: 24px;
-                line-height: 125%;
-                color: white;
-                margin-left: 400px;
-            }
-            
-            ul {
-                list-style: none;
-                margin-top: 10px;
-
-                li {
-                    font-family: 'pluto_sanscond_medium', sans-serif;
-                    font-size: 16px;
-                    line-height: 1.4em;
-                    color: white;
-                    display: block;
-
-                    &:before {
-                        content: '*';
-                        float:left;
-                        color: black;
-                        padding-right: 5px;
-                        padding-top: 4px;
-                        margin-bottom: -4px;
-                        font-size: 18px;
-                    }
-                }
-            }
-            
-            .carrot {
-                font-family: 'pluto_sanscond_medium', sans-serif;
-                font-size: 13px;
-                line-height: 1em;
-                background: url('../images/carrot.png') no-repeat left top;
-                position: absolute;
-                top: 280px;
-                left: -13px;
-                width: 488px;
-                height: 53px;
-                padding: 7px 0 0 170px;
-            }
-
-            .bubble {
-                position: absolute;
-                line-height: 1.1em;
-                text-align: center;
-                opacity: 0;
-                transition: opacity 1s;
-            }
-
-            .man {
-                font-size: 20px;
-            }
-
-            .bully {
-                font-size: 23px;
-            }
-
-            .bullyWall {
-                opacity: 0;
-                transition: opacity 1s;
-            }
-
-            &.active {
-                .bubble, .bullyWall {
-                    opacity: 1;
-                }
-            }
-              ////////////////////////////////
-             /// End Step content styles: ///
-            ////////////////////////////////
+    /*    STEP THREE */
+    &.step3 {
+        .hbox {
+            background: url('../images/shapeH1_3.png') no-repeat left top;
+            width: 401px;
+            height: 63px;
         }
 
-        /*    STEP ONE */
-        #stepOne {
-            .hbox {
-                background: url('../images/shapeH1_1.png') no-repeat left top;
-                width: 366px;
-                height: 63px;
-            }
-
-            .character {
-                position: absolute;
-                top: -117px;
-                right: 96px;
-            }
-
-            .man {
-                background: url('../images/bubbleMan_1.png') no-repeat left top;
-                width: 174px;
-                height: 104px;
-                top: -200px;
-                right: 307px;
-                padding-top: 12px;
-            }
-
-            .bully {
-                background: url('../images/bubbleBully_1.png') no-repeat left top;
-                width: 204px;
-                height: 156px;
-                top: -254px;
-                right: 77px;
-                padding-top: 7px;
-            }
+        .carrot {
+            font-size: 12px;
         }
 
-        /*    STEP TWO */
-        #stepTwo {
-            .hbox {
-                background: url('../images/shapeH1_2.png') no-repeat left top;
-                width: 378px;
-                height: 64px;
-            }
-
-            .character {
-                position: absolute;
-                top: -144px;
-                right: 107px;
-            }
-
-            .man {
-                background: url('../images/bubbleMan_2.png') no-repeat left top;
-                background-position-x: 16px;
-                width: 215px;
-                height: 74px;
-                top: -181px;
-                right: 287px;
-                padding-top: 15px;
-            }
-
-            span.n2 {
-                margin-left: 124px;
-            }
-
-            .bully {
-                background: url('../images/bubbleBully_2.png') no-repeat left top;
-                background-position-x: 28px;
-                width: 364px;
-                height: 159px;
-                top: -286px;
-                right: 100px;
-                
-            }
+        .character {
+            position: absolute;
+            top: -138px;
+            right: 57px;
         }
 
-        /*    STEP THREE */
-        #stepThree {
-            .hbox {
-                background: url('../images/shapeH1_3.png') no-repeat left top;
-                width: 401px;
-                height: 63px;
-            }
-
-            .carrot {
-                font-size: 12px;
-            }
-
-            .character {
-                position: absolute;
-                top: -138px;
-                right: 57px;
-            }
-
-            .man {
-                background: url('../images/bubbleMan_3.png') no-repeat left top;
-                background-position: 0 50%;
-                width: 189px;
-                height: 105px;
-                top: -220px;
-                right: 285px;
-                padding-top: 16px;
-            }
-
-            .bully {
-                background: url('../images/bubbleBully_3.png') no-repeat left top;
-                background-position: 0 50%;
-                width: 225px;
-                height: 107px;
-                top: -241px;
-                right: 56px;
-                padding-top: 11px;
-            }
+        .man {
+            background: url('../images/bubbleMan_3.png') no-repeat left top;
+            background-position: 0 50%;
+            width: 189px;
+            height: 105px;
+            top: -220px;
+            right: 285px;
+            padding-top: 16px;
         }
 
-        /*    STEP FOUR */
-        #stepFour {
-            .hbox {
-                background: url('../images/shapeH1_4.png') no-repeat left top;
-                width: 376px;
-                height: 64px;
-            }
+        .bully {
+            background: url('../images/bubbleBully_3.png') no-repeat left top;
+            background-position: 0 50%;
+            width: 225px;
+            height: 107px;
+            top: -241px;
+            right: 56px;
+            padding-top: 11px;
+        }
+    }
 
-            .character {
-                position: absolute;
-                top: -137px;
-                right: 88px;
-            }
-
-            .man {
-                background: url('../images/bubbleMan_4.png') no-repeat left top;
-                background-position-x: 0;
-                width: 115px;
-                height: 78px;
-                top: -204px;
-                right: 287px;
-                padding-top: 8px;
-            }
-
-            .bully {
-                background: url('../images/bubbleBully_4.png') no-repeat left top;
-                background-position-x: 0;
-                width: 213px;
-                height: 133px;
-                top: -255px;
-                right: 72px;
-                padding-top: 15px;
-            }
+    /*    STEP FOUR */
+    &.step4 {
+        .hbox {
+            background: url('../images/shapeH1_4.png') no-repeat left top;
+            width: 376px;
+            height: 64px;
         }
 
-        /*    STEP FIVE */
-        #stepFive {
-            .hbox {
-                background: url('../images/shapeH1_5.png') no-repeat left top;
-                width: 356px;
-                height: 63px;
-            }
-
-            .carrot {
-                font-size: 12px;
-            }
-
-            .character {
-                position: absolute;
-                top: -56px;
-                right: 71px;
-            }
-
-            .man {
-                background: url('../images/bubbleMan_5.png') no-repeat left top;
-                background-position-x: 0;
-                width: 164px;
-                height: 79px;
-                top: -137px;
-                right: 269px;
-                padding-top: 17px;
-            }
-
-            .bully {
-                background: url('../images/bubbleBully_5.png') no-repeat left top;
-                background-position-x: 0;
-                width: 231px;
-                height: 139px;
-                top: -206px;
-                right: 90px;
-                padding-top: 15px;
-            }
-
-            .bullyWall {
-                position: absolute;
-                top: -244px;
-                right: 372px;
-            }
+        .character {
+            position: absolute;
+            top: -137px;
+            right: 88px;
         }
 
-        /* STEP SIX */
-        #stepSix {
-            background-image: url('../images/endaskilti.png');
-            background-repeat: no-repeat;
-            background-position: 50% 50%;
+        .man {
+            background: url('../images/bubbleMan_4.png') no-repeat left top;
+            background-position-x: 0;
+            width: 115px;
+            height: 78px;
+            top: -204px;
+            right: 287px;
+            padding-top: 8px;
+        }
 
-            h5 {
-                font-size: 36px;
-                line-height: 100%;
-                color: @black;
-                width: 400px;
-                padding: 50px 62px;
-            }
+        .bully {
+            background: url('../images/bubbleBully_4.png') no-repeat left top;
+            background-position-x: 0;
+            width: 213px;
+            height: 133px;
+            top: -255px;
+            right: 72px;
+            padding-top: 15px;
+        }
+    }
 
-            .paper {
-                width:683px;
-                height:168px;
-                position: absolute;
-                left:50px;
-                bottom: 35px;
+    /*    STEP FIVE */
+    &.step5 {
+        .hbox {
+            background: url('../images/shapeH1_5.png') no-repeat left top;
+            width: 356px;
+            height: 63px;
+        }
 
-                font-size: 60px;
-                color: @black;
-                text-align: center;
-                line-height: 200px;
+        .carrot {
+            font-size: 12px;
+        }
 
-                strong {
-                    color: @red;
-                }
+        .character {
+            position: absolute;
+            top: -56px;
+            right: 71px;
+        }
+
+        .man {
+            background: url('../images/bubbleMan_5.png') no-repeat left top;
+            background-position-x: 0;
+            width: 164px;
+            height: 79px;
+            top: -137px;
+            right: 269px;
+            padding-top: 17px;
+        }
+
+        .bully {
+            background: url('../images/bubbleBully_5.png') no-repeat left top;
+            background-position-x: 0;
+            width: 231px;
+            height: 139px;
+            top: -206px;
+            right: 90px;
+            padding-top: 15px;
+        }
+
+        .bullyWall {
+            position: absolute;
+            top: -244px;
+            right: 372px;
+        }
+    }
+
+    /* STEP SIX */
+    &.step6 {
+        background-image: url('../images/endaskilti.png');
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+
+        h5 {
+            font-size: 36px;
+            line-height: 100%;
+            color: @black;
+            width: 400px;
+            padding: 50px 62px;
+        }
+
+        .paper {
+            width:683px;
+            height:168px;
+            position: absolute;
+            left:50px;
+            bottom: 35px;
+
+            font-size: 60px;
+            color: @black;
+            text-align: center;
+            line-height: 200px;
+
+            strong {
+                color: @red;
             }
         }
     }
 }
 
-#stepRead {
-    width: 500px;
-    padding: 25px;
+#cboxOverlay {
+    background: rgb(39, 39, 39);
 }
 
-#stepRead h1 {
-    font-family: 'sheldon_featherregular', sans-serif;
-    color: white;
-    font-size: 54px;
-    position: absolute;
-    padding-left: 8px;
-}
+#cboxLoadedContent .step {
+    box-shadow: none;
+    margin:0 !important;
+    padding:0;
+    width:600px;
+    height:auto;
+    background: transparent;
 
-#stepRead h2, h4, .lesaMeira {
-    font-family: 'sheldon_featherregular', sans-serif;
-    position: relative;
-}
+    .character, .bubble, .man, .bully, .bullyWall, .shadow, .lesa-meira {
+        display: none;
+    }
 
-#stepRead h2 {
-    margin-bottom: -30px;
-    font-size: 24px;
-    line-height: 0.9em;
-}
+    .indent {
+        width: auto;
+    }
 
-#stepRead h4 {
-    margin-top: 50px;
-    font-size: 22px;
-    line-height: 1em;
-}
+    .meira {
+        display: block;
+        width:500px;
+        p {
+            font-family: 'pluto_sanscond_medium', sans-serif;
+            font-size: 14px;
+            line-height: 125%;
+            margin: 10px 0;
 
-#stepRead .lesaMeira {
-    font-size: 24px;
-    line-height: 0.9em;
-}
+            strong {
+                color: white;
+            }
+        }
+    }
 
-#stepRead ul {
-    list-style-image: url('../images/bullit.png');
-}
-
-#stepRead li {
-    font-family: 'pluto_sanscond_medium', sans-serif;
-    font-size: 16px;
-    line-height: 1.4em;
-    color: white;
-}
-
-#stepRead .lesa {
-    font-family: 'pluto_sanscond_medium', sans-serif;
-    font-size: 14px;
-    line-height: 1.4em;
-}
-
-#stepRead .carrot {
-    font-family: 'pluto_sanscond_medium', sans-serif;
-    font-size: 13px;
-    line-height: 1em;
-    background: url('../images/carrot.png') no-repeat left top;
-    position: absolute;
-    left: -13px;
-    width: 488px;
-    height: 53px;
-    padding: 7px 0 0 170px;
-    overflow: hidden;
+    .carrot {
+        font-family: 'pluto_sanscond_medium', sans-serif;
+        font-size: 13px;
+        line-height: 100%;
+        background: url('../images/carrot.png') no-repeat left top;
+        position: static;
+        width: 400px;
+        height: 53px;
+        padding: 7px 0 0 170px;
+        margin-left:-14px;
+        overflow: hidden;
+    }
 }

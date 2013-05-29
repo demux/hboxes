@@ -67,10 +67,8 @@ Router = Backbone.Router.extend({
     }
     index = parseInt(index);
     cb = function() {
-      var html;
-      html = $('#step' + index + 'modal').html();
-      return $.colorbox({
-        html: '<div id="stepRead">' + html + '</div>',
+      $.colorbox({
+        html: $('#steps').find('.step').eq(index - 1)[0].outerHTML,
         onClosed: function() {
           if (scroll_active) {
             return navigate_to_step(index - 1, {
@@ -79,6 +77,9 @@ Router = Backbone.Router.extend({
             });
           }
         }
+      });
+      return $('#cboxLoadedContent').css({
+        backgroundColor: index % 2 === 0 ? '#d52b1a' : '#eb4f13'
       });
     };
     if ((active_step != null) && active_step === (index - 1)) {

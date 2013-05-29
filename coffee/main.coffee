@@ -44,13 +44,15 @@ Router = Backbone.Router.extend
     modal: (index=1) ->
         index = parseInt(index)
         cb = ->
-            html = $('#step' + index + 'modal').html()
             $.colorbox
-                html: '<div id="stepRead">' + html + '</div>'
+                html: $('#steps').find('.step').eq(index - 1)[0].outerHTML
                 onClosed: ->
                     if scroll_active
                         navigate_to_step(index - 1, {trigger: false, replace: true})
-                        
+
+            $('#cboxLoadedContent').css
+                backgroundColor: if index % 2 == 0 then '#d52b1a' else '#eb4f13'
+
         if active_step? and active_step == (index - 1)
             cb()
         else
