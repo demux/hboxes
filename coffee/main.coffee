@@ -42,13 +42,19 @@ Router = Backbone.Router.extend
             return false
 
     modal: (index=1) ->
-        @step index, ->
+        index = parseInt(index)
+        cb = ->
             html = $('#step' + index + 'modal').html()
             $.colorbox
                 html: '<div id="stepRead">' + html + '</div>'
                 onClosed: ->
                     if scroll_active
                         navigate_to_step(index - 1, {trigger: false, replace: true})
+                        
+        if active_step? and active_step == (index - 1)
+            cb()
+        else
+            @step index, cb
 
     routes:
         '': 'step'

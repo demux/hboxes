@@ -61,10 +61,12 @@ Router = Backbone.Router.extend({
     return false;
   },
   modal: function(index) {
+    var cb;
     if (index == null) {
       index = 1;
     }
-    return this.step(index, function() {
+    index = parseInt(index);
+    cb = function() {
       var html;
       html = $('#step' + index + 'modal').html();
       return $.colorbox({
@@ -78,7 +80,12 @@ Router = Backbone.Router.extend({
           }
         }
       });
-    });
+    };
+    if ((active_step != null) && active_step === (index - 1)) {
+      return cb();
+    } else {
+      return this.step(index, cb);
+    }
   },
   routes: {
     '': 'step',
