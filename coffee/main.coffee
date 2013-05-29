@@ -35,15 +35,27 @@ get_step_index_pos = (index) ->
     $steps.eq(index).offset().left + _width / 2
 
 Router = Backbone.Router.extend
-    routes:
-        '': ->
-            scroll_to(get_step_index_pos(0))
+    step: (index=1, callback) ->
+            $.colorbox.close()
+            index = parseInt(index) - 1
+            scroll_to(get_step_index_pos(index), callback)
             return false
 
-        's:index': (index) ->
-            index = parseInt(index) - 1
-            scroll_to(get_step_index_pos(index))
-            return false
+    modal: (index=1) ->
+        @step index, ->
+            html = $('#step' + index + 'modal').html()
+            $.colorbox
+                html: '<div id="stepRead">' + html + '</div>'
+                onClosed: ->
+                    if scroll_active
+                        navigate_to_step(index - 1, {trigger: false, replace: true})
+
+    routes:
+        '': 'step'
+        'lesa': 'modal'
+        's:index': 'step'
+        's:index/lesa': 'modal'
+
 
 navigate_to_step = (index, options={trigger:true, replace:true}) ->
     index = parseInt(index) + 1
@@ -57,6 +69,12 @@ $ ->
     $steps = $('#steps').find('.step')
     total = $steps.size()
     
+    $('#steps').find('.lesa-meira').on 'click', (event) ->
+        event.preventDefault()
+        href = $(this).attr('href')
+        router.navigate(href, {trigger: true})
+        return false
+
     # Breating room on the right side:
     $(window).resize ->
         pos = $('#steps-wrapper').offset().left

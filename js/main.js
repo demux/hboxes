@@ -51,16 +51,40 @@ get_step_index_pos = function(index) {
 };
 
 Router = Backbone.Router.extend({
-  routes: {
-    '': function() {
-      scroll_to(get_step_index_pos(0));
-      return false;
-    },
-    's:index': function(index) {
-      index = parseInt(index) - 1;
-      scroll_to(get_step_index_pos(index));
-      return false;
+  step: function(index, callback) {
+    if (index == null) {
+      index = 1;
     }
+    $.colorbox.close();
+    index = parseInt(index) - 1;
+    scroll_to(get_step_index_pos(index), callback);
+    return false;
+  },
+  modal: function(index) {
+    if (index == null) {
+      index = 1;
+    }
+    return this.step(index, function() {
+      var html;
+      html = $('#step' + index + 'modal').html();
+      return $.colorbox({
+        html: '<div id="stepRead">' + html + '</div>',
+        onClosed: function() {
+          if (scroll_active) {
+            return navigate_to_step(index - 1, {
+              trigger: false,
+              replace: true
+            });
+          }
+        }
+      });
+    });
+  },
+  routes: {
+    '': 'step',
+    'lesa': 'modal',
+    's:index': 'step',
+    's:index/lesa': 'modal'
   }
 });
 
@@ -83,6 +107,15 @@ $(function() {
   var get_margin_top;
   $steps = $('#steps').find('.step');
   total = $steps.size();
+  $('#steps').find('.lesa-meira').on('click', function(event) {
+    var href;
+    event.preventDefault();
+    href = $(this).attr('href');
+    router.navigate(href, {
+      trigger: true
+    });
+    return false;
+  });
   $(window).resize(function() {
     var pos;
     pos = $('#steps-wrapper').offset().left;
