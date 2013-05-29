@@ -12,8 +12,12 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
 
+    <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/fonts/fonts.css">
+    <link rel="stylesheet" href="/css/colorbox.css" />
 
     <!--<link rel="stylesheet" href="css/main.css">-->
 
@@ -30,36 +34,234 @@
         <div id="logo">Logo</div>
         
         <ul>
-            <li>#1</li>
-            <li>#2</li>
-            <li>#3</li>
-            <li>#4</li>
-            <li>#5</li>
-            <li>#6</li>
+            <li class="n1">
+                FYRSTA ÞREP
+                <b></b>
+            </li>
+            <li class="n2">
+                ANNAÐ ÞREP
+                <b></b>
+            </li>
+            <li class="n3">
+                ÞRIÐJA ÞREP
+                <b></b>
+            </li>
+            <li class="n4">
+                FJÓRÐA ÞREP
+                <b></b>
+            </li>
+            <li class="n5">
+                FIMMTA ÞREP
+                <b></b>
+            </li>
+            <li class="n6">
+                {TODO:SÍMI}
+            </li>
         </ul>
     </div>
 
     <div id="steps-wrapper">
         <div id="steps">
-            <div class="step"></div>
-            
-            <div class="step">
+            <div id="stepOne" class="step">
+                <div class="bubble man">
+                    Hefur þú einhvern tíma hugsað<br>
+                    um að hætta tóbaksnotkun
+                </div>
+
+                <div class="bubble bully">
+                    þetta er ekkert vandamál!<br>
+                    frænka vinar míns reykti alltaf þrjá pakka af filterslausum<br>
+                    á dag og varð 97 ára!
+                </div>
+
+                <img src="images/character_1.png" class="character">
+
+                <div class="indent">
+                    <h2>FYRSTA ÞREP</h2>
+
+                    <div class="hbox">
+                        <h1>FORÍHUGUNARÞREP</h1>
+                        <h4>(ÆTLAR EKKI AÐ<br>BREYTA HEGÐUN)</h4>
+                    </div>
+
+                    <ul>
+                        <li>Hefur engar áætlanir að breyta hegðun</li>
+                        <li>Vill ekki breyta hegðun sinni og fer í vörn</li>
+                        <li>Kostir hegðunarinnar mikilvægari en gallarnir</li>
+                        <li>Forðast upplýsingar og pælir minna en aðrir í hegðun sinni</li>
+                    </ul>
+
+                    <p class="lesaMeira">
+                        <a class="iframe" href="text_1.html">Lesa meira</a>
+                    </p>
+                </div>
+
+                <div class="carrot">
+                    Er til staðar til að ræða málin, hvetur<br>
+                    og fræðir eftir því sem færi gefst.
+                </div>
+            </div>
+
+            <div id="stepTwo" class="step">
+                <div class="bubble man">
+                    Hver yrði helst ávinningurinn<br>
+                    að hætta að nota tóbak?
+                </div>
+
+                <div class="bubble bully" style="line-height: 2.6em;">
+                    ÉG HÆTTI EINHVERN DAGINN. ÞAÐ ER ALVEG KLÁRT.<br>
+                    <span class="n2">ÉG GET BARA EKKI FARIÐ AÐ HÆTTA Í FRÍINU!</span>
+                </div>
+
+                <img src="images/character_2.png" class="character">
+
+                <div class="indent">
+                    <h2>ANNAÐ ÞREP</h2>
+                    <div class="hbox">
+                        <h1>ÍHUGUNARÞREP</h1>
+                        <h4>(Vill breyta hegðun en er<br>ekki búin að taka ákvörðun)</h4>
+                    </div>
+                
+                    <ul>
+                        <li>Er meðvitaður um áhætturnar og er alvarlega að hugsa um að breyta hegðun</li>
+                        <li>Er að vega og meta kosti og galla en hefur ekki tekið ákvörðun um að breyta hegðun sinni</li>
+                        <li>Meðvitaðri um kosti þess að breyta hegðun en veit af göllunum</li>
+                    </ul>
+
+                    <p class="lesaMeira">
+                        <a class='iframe' href="text_2.html">Lesa meira</a>
+                    </p>
+                </div>
+
+                <div class="carrot">
+                    Talar um ástæðurnar fyrir reykingunum<br>
+                    og kostina við að hætta að reykja.
+                </div>
+
                 <div class="shadow"></div>
             </div>
-            
-            <div class="step">
+
+            <div id="stepThree" class="step">
+                <div class="bubble man">
+                    Ég þekki einn sem fékk aðstoð við<br>
+                    að hætta hjá Reyksímanum 8006030
+                </div>
+                
+                <div class="bubble bully">
+                    Nú er ég alveg að fara að drepa í<br>
+                    Ný vika framundan – tóbakslaus
+                </div>
+
+                <img src="images/character_3.png" class="character">
+
+                <div class="indent">
+                    <h2>þriðja þrep</h2>
+                    <div class="hbox">
+                        <h1>Undirbúningsþrep</h1>
+                        <h4>(Hefur tekið ákvörðun<br>um að hætta)</h4>
+                    </div>
+                
+                    <ul>
+                        <li>Hefur tekið ákvörðun um að breyta hegðun sinni</li>
+                        <li>Metur kosti þess að breyta hegðun mikilvægari en ókostina</li>
+                        <li>Einstaklingar stoppa stutt á þessu stigi</li>
+                    </ul>
+
+                    <p class="lesaMeira">
+                        <a class='iframe' href="text_3.html">Lesa meira</a>
+                    </p>
+                </div>
+
+                <div class="carrot" style="font-size: 12px;">
+                    Hrósar fyrir ákvörðunina og býður aðstoð sína og<br>
+                    bendir á leiðir sem gagnast við að hætta að nota tóbak.
+                </div>
+
                 <div class="shadow"></div>
             </div>
-            
-            <div class="step">
+
+            <div id="stepFour" class="step">
+                <div class="bubble man">
+                    Góður! Þú lítur<br>
+                    strax betur út
+                </div>
+
+                <div class="bubble bully">
+                    Afsakaðu hvað ég er úrilur.<br>
+                    Ég er að hætta í tóbakinu
+                </div>
+
+                <img src="images/character_4.png" class="character">
+
+                <div class="indent">
+                    <h2>fjórða þrep</h2>
+                    <div class="hbox">
+                        <h1>Framkvæmdarþrep</h1>
+                        <h4>(Er hætt(ur)<br>að nota tóbak)</h4>
+                    </div>
+                
+                    <ul>
+                        <li>Hefur breytt sinni hegðun 1 dag til 6 mán</li>
+                        <li>Þarf mikið að hafa fyrir hegðunarbreytingunni áhætta á bakslagi mikil</li>
+                        <li>Metur ávinning með hegðunarbreytingu sinni meiri en kostnaðinn</li>
+                    </ul>
+
+                    <p class="lesaMeira">
+                        <a class='iframe' href="text_4.html">Lesa meira</a>
+                    </p>
+                </div>
+
+                <div class="carrot">
+                    Hrósar, styður og bendir á leiðir<br>
+                    til að koma í veg fyrir bakslag.
+                </div>
+
                 <div class="shadow"></div>
             </div>
-            
-            <div class="step">
+            <div id="stepFive" class="step">
+                <img src="images/bullyWall.png" class="bullyWall">
+                
+                <div class="bubble man">Þetta er bara allt annað líf</div>
+                
+                <div class="bubble bully">Manstu þegar ég stóð úti á svölum í rigningu og roki til að reykja</div>
+
+                <img src="images/character_5.png" class="character">
+
+                <div class="indent">
+                    <h2>fimmta þrep</h2>
+
+                    <div class="hbox">
+                        <h1>Viðhaldsþrep</h1>
+                        <h4>(Hefur ekki notað<br>tóbak í einhvern tíma)</h4>
+                    </div>
+
+                    <ul>
+                        <li>Ný hegðun orðin stöðug, hefur varað í meiri en 6 mánuði</li>
+                        <li>Vinnur að því að koma í veg fyrir bakslag</li>
+                        <li>Hugsar lítið um gömlu hegðunina</li>
+                    </ul>
+
+                    <p class="lesaMeira">
+                        <a class='iframe' href="text_5.html">Lesa meira</a>
+                    </p>
+                </div>
+
+                <div class="carrot" style="font-size: 12px;">
+                    Hrósar, styður og bendir á hættur í umhverfinu<br>
+                    og hvernig hugarástand getur aukið líkur á bakslagi.
+                </div>
+                
                 <div class="shadow"></div>
             </div>
-            
-            <div class="step">
+
+            <div id="stepSix" class="step">
+                <h5>
+                    VANTAR ÞIG HJÁLP VIÐ KOMAST Í GEGNUM<br>
+                    ÞREPIN OG HÆTTA TÓBAKSNOTKUN?
+                </h5>
+
+                <div class="paper">FÁÐU RÁÐGJÖF Í SÍMA: <strong>800 60 30</strong></div>
+
                 <div class="shadow"></div>
             </div>
         </div>

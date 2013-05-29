@@ -1,5 +1,5 @@
-_width = 300
-_height = 300
+_width = 780
+_height = 370
 _margin = 40
 _time = 0.7
 
