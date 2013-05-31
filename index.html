@@ -15,15 +15,15 @@
     <script src="js/vendor/modernizr-2.6.2.min.js"></script>
 
     <link rel="stylesheet" href="/css/reset.css">
-    <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/fonts/fonts.css">
-    <link rel="stylesheet" href="/css/colorbox.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jquery.colorbox/1.4.3/example2/colorbox.min.css" />
 
-    <!--<link rel="stylesheet" href="css/main.css">-->
+    <link rel="stylesheet" href="/css/main.css">
 
-    <link rel="stylesheet/less" type="/text/css" href="less/main.less">
-    
+    <!--
+    <link rel="stylesheet/less" type="/text/css" href="/less/main.less">
     <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.3.3/less.min.js"></script>
+    -->
 </head>
 
 <body>
@@ -31,38 +31,33 @@
     <div class="y"></div>
 
     <div id="menu">
-        <div id="logo">Logo</div>
+        <img class="logo" src="/images/dagurAnTobaks.png">
         
         <ul>
             <li class="n1">
-                FYRSTA ÞREP
-                <b></b>
+                <strong>fyrsta þrep</strong><br>Foríhugunarþrep</a>
             </li>
             <li class="n2">
-                ANNAÐ ÞREP
-                <b></b>
+                <strong>annað þrep</strong><br>Íhugunarþrep</a>
             </li>
             <li class="n3">
-                ÞRIÐJA ÞREP
-                <b></b>
+                <strong>þriðja þrep</strong><br>Undirbúningsþrep</a>
             </li>
             <li class="n4">
-                FJÓRÐA ÞREP
-                <b></b>
+                <strong>fjórða þrep</strong><br>Framkvæmdarþrep</a>
             </li>
             <li class="n5">
-                FIMMTA ÞREP
-                <b></b>
+                <strong>fimmta þrep</strong><br>Viðhaldsþrep</a>
             </li>
             <li class="n6">
-                {TODO:SÍMI}
+                <img src="/images/simi.png">
             </li>
         </ul>
     </div>
 
     <div id="steps-wrapper">
         <div id="steps">
-            <div id="stepOne" class="step">
+            <div class="step step1">
                 <div class="bubble man">
                     Hefur þú einhvern tíma hugsað<br>
                     um að hætta tóbaksnotkun
@@ -74,7 +69,7 @@
                     á dag og varð 97 ára!
                 </div>
 
-                <img src="images/character_1.png" class="character">
+                <img src="/images/character_1.png" class="character">
 
                 <div class="indent">
                     <h2>FYRSTA ÞREP</h2>
@@ -91,18 +86,17 @@
                         <li>Forðast upplýsingar og pælir minna en aðrir í hegðun sinni</li>
                     </ul>
 
-                    <p class="lesaMeira">
-                        <a class="iframe" href="text_1.html">Lesa meira</a>
-                    </p>
+                    <a class="lesa-meira" href="/lesa">Lesa meira</a>
+
+                    <div class="meira">
+                        <p>Þeir sem eru á foríhugunarþrepi ætla ekki að hætta að nota tóbak á næstunni. Þeir hafa tilhneigingu til að forðast að lesa, ræða eða hugsa um skaðsemi tóbaks. Sumir stinga höfðinu í sandinn, sumir vitna í vafasamar upplýsingar af netinu um skaðleysi tóbaks og flestir þekkja einhvern sem hefur lifað til hárrar elli þrátt fyrir að hafa notað tóbak. Það er best að eiga við tóbakshegðun á foríhugunarþrepi því að ræða almennt um skaðsemi tóbaksnotkunar og hvetja fólk til að kynna sér hana.</p>
+                    </div>
                 </div>
 
-                <div class="carrot">
-                    Er til staðar til að ræða málin, hvetur<br>
-                    og fræðir eftir því sem færi gefst.
-                </div>
+                <div class="carrot">Er til staðar til að ræða málin, hvetur<br>og fræðir eftir því sem færi gefst.</div>
             </div>
 
-            <div id="stepTwo" class="step">
+            <div class="step step2">
                 <div class="bubble man">
                     Hver yrði helst ávinningurinn<br>
                     að hætta að nota tóbak?
@@ -113,7 +107,7 @@
                     <span class="n2">ÉG GET BARA EKKI FARIÐ AÐ HÆTTA Í FRÍINU!</span>
                 </div>
 
-                <img src="images/character_2.png" class="character">
+                <img src="/images/character_2.png" class="character">
 
                 <div class="indent">
                     <h2>ANNAÐ ÞREP</h2>
@@ -128,9 +122,13 @@
                         <li>Meðvitaðri um kosti þess að breyta hegðun en veit af göllunum</li>
                     </ul>
 
-                    <p class="lesaMeira">
-                        <a class='iframe' href="text_2.html">Lesa meira</a>
-                    </p>
+                    <a class="lesa-meira" href="/s2/lesa">Lesa meira</a>
+
+                    <div class="meira">
+                        <p>Á þessu þrepi er fólk sem ætlar að hætta að nota tóbak en ekki alveg strax. Fólk þekkir neikvæðu hliðarnar á því að nota tóbak en er einnig meðvitað um kostina. Togstreitan milli kostanna og ókostanna gerir það oft að verkum að fólk er á báðum áttum í afstöðu sinni til tóbaksnotkunar, sem getur orðið til þess að fólk stoppar lengi á þessu þrepi.</p>
+            
+                        <p>Á þessu þrepi er fólk oftast ekki mótækilegt fyrir áróðri eða þrýstingi um að hætta að nota tóbak, enda ekki búið að gera upp hug sinn. Til að fólk á þessu þrepi taki ákvörðun um hætti að nota tóbak og komist á undirbúningsþrepið þurfa kostirnir að vera mikilvægari en ókostirnir.</p>
+                    </div>
                 </div>
 
                 <div class="carrot">
@@ -141,7 +139,7 @@
                 <div class="shadow"></div>
             </div>
 
-            <div id="stepThree" class="step">
+            <div class="step step3">
                 <div class="bubble man">
                     Ég þekki einn sem fékk aðstoð við<br>
                     að hætta hjá Reyksímanum 8006030
@@ -152,7 +150,7 @@
                     Ný vika framundan – tóbakslaus
                 </div>
 
-                <img src="images/character_3.png" class="character">
+                <img src="/images/character_3.png" class="character">
 
                 <div class="indent">
                     <h2>þriðja þrep</h2>
@@ -167,9 +165,13 @@
                         <li>Einstaklingar stoppa stutt á þessu stigi</li>
                     </ul>
 
-                    <p class="lesaMeira">
-                        <a class='iframe' href="text_3.html">Lesa meira</a>
-                    </p>
+                    <a class="lesa-meira" href="/s3/lesa">Lesa meira</a>
+
+                    <div class="meira">
+                        <p>Í þessu þrepi eru þeir staddir sem ætla að hætta að nota tóbak í nánustu framtíð oft innan mánaðar. Undirbúningsvinnan er hafin og þeir eru sennilega búnir að ákveða daginn sem þeir ætla að hætta að nota tóbak.</p>
+
+                        <p>Þessir einstaklingar eru líklegir til að ræða við heilbrigðisstarfsfólk eða sína nánustu um þá ætlun sína að hætta að nota tóbak. Hér er fólk tilbúið til að fá aðstoð við að hætta að nota tóbak t.d frá Ráðgjöf í reykbindindi í <strong>s: 800 60 30</strong> eða öðru heilbrigðisstarfsfólki.</p>
+                    </div>
                 </div>
 
                 <div class="carrot" style="font-size: 12px;">
@@ -180,7 +182,7 @@
                 <div class="shadow"></div>
             </div>
 
-            <div id="stepFour" class="step">
+            <div class="step step4">
                 <div class="bubble man">
                     Góður! Þú lítur<br>
                     strax betur út
@@ -191,7 +193,7 @@
                     Ég er að hætta í tóbakinu
                 </div>
 
-                <img src="images/character_4.png" class="character">
+                <img src="/images/character_4.png" class="character">
 
                 <div class="indent">
                     <h2>fjórða þrep</h2>
@@ -206,9 +208,12 @@
                         <li>Metur ávinning með hegðunarbreytingu sinni meiri en kostnaðinn</li>
                     </ul>
 
-                    <p class="lesaMeira">
-                        <a class='iframe' href="text_4.html">Lesa meira</a>
-                    </p>
+                    <a class="lesa-meira" href="/s4/lesa">Lesa meira</a>
+
+                    <div class="meira">
+                        <p>Hér eru þeir sem nýlega hafa hætt að nota tóbak. Hættan á bakslagi er mikil og þeir hafa mikið fyrir því að nota ekki tóbak. Hér er er fólk vel meðvitað um að kostirnir við að hætta eru mikilvægari en ókostirnir.</p>
+                        <p>Þeir sem eru á þessu þrepi þurfa að forðast aðstæður sem auka á hættuna á að fara að nota tóbak aftur. Á þessu þrepi er gott að  hvetja  þá til að hreyfa sig, borða holla fæðu auka annarrar heilsueflingar. Slík heilsuhegðun  styrkir þá í ákvörðuninni að nota ekki tóbak.</p>
+                    </div>
                 </div>
 
                 <div class="carrot">
@@ -218,14 +223,15 @@
 
                 <div class="shadow"></div>
             </div>
-            <div id="stepFive" class="step">
-                <img src="images/bullyWall.png" class="bullyWall">
+
+            <div class="step step5">
+                <img src="/images/bullyWall.png" class="bullyWall">
                 
                 <div class="bubble man">Þetta er bara allt annað líf</div>
                 
                 <div class="bubble bully">Manstu þegar ég stóð úti á svölum í rigningu og roki til að reykja</div>
 
-                <img src="images/character_5.png" class="character">
+                <img src="/images/character_5.png" class="character">
 
                 <div class="indent">
                     <h2>fimmta þrep</h2>
@@ -241,9 +247,15 @@
                         <li>Hugsar lítið um gömlu hegðunina</li>
                     </ul>
 
-                    <p class="lesaMeira">
-                        <a class='iframe' href="text_5.html">Lesa meira</a>
-                    </p>
+                    <a class="lesa-meira" href="/s5/lesa">Lesa meira</a>
+
+                    <div class="meira">
+                        <p>Fólk sem sýnir tóbakshegðun á afneitunarþrepinu ætlar ekki að hætta að nota tóbak á næstunni. Einstaklingar geta verið á þessu þrepi af því að lokar augunum fyrir skaðsemi tóbaks- notkunar eða vanmetur hætturnar sem felast í notkuninni. Fólk með þessa tegund af tóbakshegðun hefur í mörgum tilvikum reynt að hætta að nota tóbak en mistekist og í kjölfarinu misst trúnna á að það sé yfir höfuð hægt. Sumir stinga höfðinu í sandinn, sumir vitna í vafasamar upplýsingar af netinu um skaðleysi tóbaks og flestir þekkja einhvern sem hefur lifað til hárrar elli þrátt fyrir að reykja.</p>
+            
+                        <p>Það er best að eiga við tóbakshegðun á afneitunarþrepi með upplýsingum um skaðsemi tóbaksnotkunar og hvatningu.</p>
+            
+                        <p>Hlutverk vinar tóbaksnotanda er að hvetja vininn til að ræða málin og kynna sér afleiðingarnar. Í mörgum tilvikum má þó búast við talsverðum undanbrögðum og tregðu til að ræða tóbaksnotkunina enda er tóbakshegðunin á afneitunarstigi.</p>
+                    </div>
                 </div>
 
                 <div class="carrot" style="font-size: 12px;">
@@ -254,7 +266,7 @@
                 <div class="shadow"></div>
             </div>
 
-            <div id="stepSix" class="step">
+            <div class="step step6">
                 <h5>
                     VANTAR ÞIG HJÁLP VIÐ KOMAST Í GEGNUM<br>
                     ÞREPIN OG HÆTTA TÓBAKSNOTKUN?
@@ -267,12 +279,25 @@
         </div>
     </div>
 
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-32263853-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.1/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.9.7/TweenMax.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.9.7/plugins/ScrollToPlugin.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.3/jquery.mousewheel.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone-min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.colorbox/1.4.3/jquery.colorbox-min.js"></script>
 
     <script src="/js/main.js"></script>
 

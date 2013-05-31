@@ -1,6 +1,7 @@
 _width = 780
 _height = 370
 _margin = 40
+_min_margin = 280
 _time = 0.7
 
 $steps = null
@@ -35,15 +36,35 @@ get_step_index_pos = (index) ->
     $steps.eq(index).offset().left + _width / 2
 
 Router = Backbone.Router.extend
-    routes:
-        '': ->
-            scroll_to(get_step_index_pos(0))
+    step: (index=1, callback) ->
+            $.colorbox.close()
+            index = parseInt(index) - 1
+            scroll_to(get_step_index_pos(index), callback)
             return false
 
-        's:index': (index) ->
-            index = parseInt(index) - 1
-            scroll_to(get_step_index_pos(index))
-            return false
+    modal: (index=1) ->
+        index = parseInt(index)
+        cb = ->
+            $.colorbox
+                html: $('#steps').find('.step').eq(index - 1)[0].outerHTML
+                onClosed: ->
+                    if scroll_active
+                        navigate_to_step(index - 1, {trigger: false, replace: true})
+
+            $('#cboxLoadedContent').css
+                backgroundColor: if index % 2 == 0 then '#d52b1a' else '#eb4f13'
+
+        if active_step? and active_step == (index - 1)
+            cb()
+        else
+            @step index, cb
+
+    routes:
+        '': 'step'
+        'lesa': 'modal'
+        's:index': 'step'
+        's:index/lesa': 'modal'
+
 
 navigate_to_step = (index, options={trigger:true, replace:true}) ->
     index = parseInt(index) + 1
@@ -57,6 +78,12 @@ $ ->
     $steps = $('#steps').find('.step')
     total = $steps.size()
     
+    $('#steps').find('.lesa-meira').on 'click', (event) ->
+        event.preventDefault()
+        href = $(this).attr('href')
+        router.navigate(href, {trigger: true})
+        return false
+
     # Breating room on the right side:
     $(window).resize ->
         pos = $('#steps-wrapper').offset().left
@@ -66,6 +93,8 @@ $ ->
         $steps.each (index) ->
             steps_pos.push($(this).offset().left)
         steps_pos.reverse()
+
+        $(window).scroll()
     .resize()
 
     # Position steps:
@@ -93,7 +122,14 @@ $ ->
         return false
     
     get_margin_top = (i) ->
-        -(i * _margin) + (($(window).height() / 2) - (_height / 2))
+        wh = $(window).height()
+        im = -(i * _margin)
+        margin = im + ((wh / 2) - (_height / 2))
+
+        if margin < _min_margin + im
+            margin = _min_margin + im
+
+        return margin
     
     router = new Router()
 
