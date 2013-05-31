@@ -64,8 +64,8 @@ body {
   display: block;
   color: #eb4f13;
   cursor: pointer;
-  height: 72px;
   padding-left: 40px;
+  margin-bottom: 16px;
   color: #181919;
 }
 #menu ul li strong {
@@ -74,6 +74,9 @@ body {
 }
 #menu ul li:nth-child(even) strong {
   color: #d52b1a;
+}
+#menu .landlaeknir {
+  margin-left: 20px;
 }
 #steps-wrapper {
   zoom: 1;
